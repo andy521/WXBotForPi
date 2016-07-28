@@ -8,11 +8,6 @@ import re
 from urlparse import urlparse
 from wxBot.wxbot import *
 
-
-
-
-
-
 class DownloadTask:
 
     WEBLIST = {'https://www.youtube.com', 'https://twitter.com', 'http://vk.com', 'https://vine.co', 'https://vimeo.com', 'http://vidto.me', 'http://videomega.tv', 'http://www.veoh.com', 'https://www.tumblr.com', 'http://www.ted.com', 'https://soundcloud.com', 'https://www.pinterest.com', 'http://en.musicplayon.com', 'http://www.mtv81.com', 'https://www.mixcloud.com', 'http://www.metacafe.com', 'http://www.magisto.com', 'https://www.khanacademy.org', 'http://www.jpopsuki.tv', 'https://archive.org', 'https://instagram.com', 'http://www.infoq.com/presentations', 'http://imgur.com', 'http://www.heavy-music.ru', 'https://plus.google.com', 'http://www.freesound.org', 'https://www.flickr.com', 'http://video.fc2.com', 'https://www.facebook.com', 'http://www.ehow.com', 'http://www.dailymotion.com', 'http://www.cbs.com', 'http://bandcamp.com', 'http://alive.in.th', 'http://7gogo.jp', 'http://www.nicovideo.jp', 'http://v.163.com', 'http://music.163.com', 'http://www.56.com', 'http://www.acfun.tv', 'http://tieba.baidu.com', 'http://www.baomihua.com', 'http://www.bilibili.com', 'http://www.dilidili.com', 'http://www.douban.com', 'http://www.douyutv.com', 'http://www.panda.tv', 'http://v.ifeng.com', 'http://www.fun.tv', 'http://www.iqiyi.com', 'http://www.joy.cn', 'http://www.ku6.com', 'http://www.kugou.com', 'http://www.kuwo.cn', 'http://www.le.com', 'http://www.lizhi.fm', 'http://www.miaopai.com', 'http://www.miomio.tv', 'https://www.pixnet.net', 'http://www.pptv.com', 'http://v.iqilu.com', 'http://v.qq.com', 'http://live.qq.com', 'http://qianmo.com', 'http://thvideo.tv', 'http://video.sina.com.cn', 'http://video.weibo.com', 'http://tv.sohu.com', 'http://www.dongting.com', 'http://www.tudou.com', 'http://www.xiami.com', 'http://www.isuntv.com', 'http://www.yinyuetai.com', 'http://www.youku.com', 'http://v.youku.com', 'http://www.cntv.cn', 'http://huaban.com', 'http://tvcast.naver.com', 'http://www.mgtv.com'}
@@ -74,20 +69,7 @@ class DownloadTask:
         self.process.start()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 class MyWXBot(WXBot):
-
 
     # 检查哪种指令
     def _check_command(self, string):

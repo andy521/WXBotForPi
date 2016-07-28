@@ -1,0 +1,601 @@
+ 文本
+  "AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "heheda",      ！！！！！！！！！！！！！
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 6291792456052778000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 1,     ！！！！！！！！！！！！！
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "6291792456052777516",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469712489,
+      "SubMsgType": 0
+    }
+  ],
+
+
+地理位置
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "/cgi-bin/mmwebwx-bin/webwxgetpubliclinkimg?url=xxx&msgid=6922633407632048321&pictype=location",   ！！！！！！！！
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 6922633407632048000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "http://apis.map.qq.com/uri/v1/geocoder?coord=39.927048,116.618452",   ！！！！！！！！！！
+      "ImgStatus": 1,
+      "MsgType": 1,         ！！！！！！！！！！！！！
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "6922633407632048321",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469713237,
+      "SubMsgType": 48
+    }
+  ],
+
+
+  图片
+  "AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;msg&gt;&lt;img length=\"48660\" hdlength=\"0\" /&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;/msg&gt;", !!!!
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 3045932821746257000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 2,   ！！！
+      "MsgType": 3,     ！！！
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "3045932821746256767",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469714241,
+      "SubMsgType": 0
+    }
+  ],
+
+
+语音
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;msg&gt;&lt;voicemsg endflag=\"1\" length=\"4100\" voicelength=\"2100\" clientmsgid=\"49938b48caf25997dbaf3336f10aadf4wxid_1opj0zv3abea1282_1469715145\" fromusername=\"wxid_rm9bhoraxutg11\" downcount=\"0\" cancelflag=\"0\" voiceformat=\"4\" forwardflag=\"0\" bufid=\"361019515123335506\" /&gt;&lt;/msg&gt;",    !!!!!!!
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 3696718831241832000,
+      "Status": 3,
+      "VoiceLength": 2100,  !!!!!!!!!!!!
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 34,    !!!!!!!!!!!!!
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "3696718831241832068",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469715148,
+      "SubMsgType": 0
+    }
+  ],
+
+名片
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {    !!!!!!!!!!!!!!!!
+        "UserName": "@de6e338245578a8bf396cbfa6b55ae02bb214a188f00781778ba0f79b2fa40fc",
+        "Province": "Beijing",
+        "City": "中国",
+        "Scene": 17,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "Vans628",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 2,
+        "NickName": "Alisa-张婷婷",
+        "AttrStatus": 32,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;?xml version=\"1.0\"?&gt;<br/>&lt;msg bigheadimgurl=\"http://wx.qlogo.cn/mmhead/ver_1/n4icHHQqGyexzW76s90aCvYq1R6jaYUicrhlMDWa3GTVT5ibPnomOEMbFurwkI7hCevEkicLBbcleY8hybHIbAGsviaYxLgThkoBm2djg5lEaGuo/0\" smallheadimgurl=\"http://wx.qlogo.cn/mmhead/ver_1/n4icHHQqGyexzW76s90aCvYq1R6jaYUicrhlMDWa3GTVT5ibPnomOEMbFurwkI7hCevEkicLBbcleY8hybHIbAGsviaYxLgThkoBm2djg5lEaGuo/132\" username=\"v1_7336bc3169508668d4ecebc03faae49779c5e02c26cdd231d9022940efd1826e9687678da7634309f0c9bf8dbb0020ab@stranger\" nickname=\"Alisa-张婷婷\"  shortpy=\"\" alias=\"Vans628\" imagestatus=\"3\" scene=\"17\" province=\"北京\" city=\"中国\" sign=\"\" sex=\"2\" certflag=\"0\" certinfo=\"\" brandIconUrl=\"\" brandHomeUrl=\"\" brandSubscriptConfigUrl=\"\" brandFlags=\"0\" regionCode=\"CN_Beijing_Chaoyang\" /&gt;<br/>",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 1604562231905790700,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 42,    !!!
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "1604562231905790714",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469715513,
+      "SubMsgType": 0
+    },
+
+
+动画
+"AddMsgList": [
+    {
+      "ImgWidth": 200,  !!!!!!!!
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;msg&gt;&lt;emoji fromusername=\"wxid_rm9bhoraxutg11\" tousername=\"wxid_1opj0zv3abea12\" type=\"2\" idbuffer=\"media:0_0\" md5=\"846f30447c5c4c9beefeb5a61bec0ba3\" len=\"19922\" productid=\"\" androidmd5=\"846f30447c5c4c9beefeb5a61bec0ba3\" androidlen=\"19922\" s60v3md5=\"846f30447c5c4c9beefeb5a61bec0ba3\" s60v3len=\"19922\" s60v5md5=\"846f30447c5c4c9beefeb5a61bec0ba3\" s60v5len=\"19922\" cdnurl=\"http://emoji.qpic.cn/wx_emoji/jQjIRYOBoydmraMBUy7TDNmvHVCvYElQpwpicNcqrhX6W9NCHxC1xGg/\" designerid=\"\" thumburl=\"\" encrypturl=\"http://emoji.qpic.cn/wx_emoji/jQjIRYOBoydmraMBUy7TDNmvHVCvYElQdTz9tEBicPmEIcIPZfxoGDQ/\" aeskey=\"5ff8a07ac060bdba9e76071f4d28fa6a\" width=\"200\" height=\"200\"&gt;&lt;/emoji&gt;&lt;gameext type=\"0\" content=\"0\"&gt;&lt;/gameext&gt;&lt;/msg&gt;",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 4801236870121898000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 2,   !!!
+      "MsgType": 47,    !!!
+      "ImgHeight": 200,
+      "MediaId": "",
+      "MsgId": "4801236870121897745",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469715766,
+      "SubMsgType": 0
+    }
+  ],
+
+分享
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;msg&gt;&lt;appmsg appid=\"\" sdkver=\"0\"&gt;&lt;title&gt;《少数幸运儿》先行版早知道评分：90分 具有雄心和丰富内涵的独立游戏巨作 购买建议：A级 推荐&lt;/title&gt;&lt;des&gt;随着3A大作门槛的日益提高和发售周期的拉长，无论是Xboxone还是PS4大批独立游戏迎来了一个黄金时代，玩&lt;/des&gt;&lt;action&gt;&lt;/action&gt;&lt;type&gt;5&lt;/type&gt;&lt;showtype&gt;0&lt;/showtype&gt;&lt;mediatagname&gt;&lt;/mediatagname&gt;&lt;messageext&gt;&lt;/messageext&gt;&lt;messageaction&gt;&lt;/messageaction&gt;&lt;content&gt;&lt;/content&gt;&lt;contentattr&gt;0&lt;/contentattr&gt;&lt;url&gt;http://mp.weixin.qq.com/s?__biz=MzA3MzAxNDA2OA==&amp;amp;mid=2706436698&amp;amp;idx=1&amp;amp;sn=0f03615eeae20f73e9c6cafec51e13c6&amp;amp;scene=0#rd&lt;/url&gt;&lt;lowurl&gt;&lt;/lowurl&gt;&lt;dataurl&gt;&lt;/dataurl&gt;&lt;lowdataurl&gt;&lt;/lowdataurl&gt;&lt;appattach&gt;&lt;totallen&gt;0&lt;/totallen&gt;&lt;attachid&gt;&lt;/attachid&gt;&lt;emoticonmd5&gt;&lt;/emoticonmd5&gt;&lt;fileext&gt;&lt;/fileext&gt;&lt;/appattach&gt;&lt;extinfo&gt;&lt;/extinfo&gt;&lt;sourceusername&gt;gh_db953efa1167&lt;/sourceusername&gt;&lt;sourcedisplayname&gt;XBOX早知道&lt;/sourcedisplayname&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;thumburl&gt;http://mmbiz.qpic.cn/mmbiz_jpg/lH8WicibwIjzo05sByEAVw4maKlVXkRT81LQDedfzBs0HzLBxSZCicRPMntmwuJT5w7DmCOV5pHZvPkPrepz1ePww/640?wxtype=jpeg&amp;amp;wxfrom=0&lt;/thumburl&gt;&lt;statextstr&gt;&lt;/statextstr&gt;&lt;md5&gt;&lt;/md5&gt;&lt;/appmsg&gt;&lt;fromusername&gt;wxid_rm9bhoraxutg11&lt;/fromusername&gt;&lt;scene&gt;0&lt;/scene&gt;&lt;appinfo&gt;&lt;version&gt;1&lt;/version&gt;&lt;appname&gt;&lt;/appname&gt;&lt;/appinfo&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;/msg&gt;",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 6884086470749019000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 5,  !!!!!!!!!!! 3音乐  5链接  7weibo 其他 未知
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "http://mp.weixin.qq.com/s?__biz=MzA3MzAxNDA2OA==&amp;mid=2706436698&amp;idx=1&amp;sn=0f03615eeae20f73e9c6cafec51e13c6&amp;scene=0#rd",    ！！！！！！！！！！
+      "ImgStatus": 1,
+      "MsgType": 49,    !!!!!!!!!!!!!
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "6884086470749019399",
+      "FileName": "《少数幸运儿》先行版早知道评分：90分 具有雄心和丰富内涵的独立游戏巨作 购买建议：A级 推荐",    ！！！！！！！！！！！
+      "HasProductId": 0,
+      "FileSize": "0",
+      "CreateTime": 1469716172,
+      "SubMsgType": 0
+    }
+  ],
+
+视频
+
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;?xml version=\"1.0\"?&gt;<br/>&lt;msg&gt;<br/>\t&lt;videomsg aeskey=\"fdb5e68c79c04b6cab2566422df17abe\" cdnthumbaeskey=\"fdb5e68c79c04b6cab2566422df17abe\" cdnvideourl=\"304b02010004443042020100020499adfc7202032dc8b50204165c512a0204579a19510420777869645f316f706a307a763361626561313238365f313436393731363831350201000201000400\" cdnthumburl=\"304b02010004443042020100020499adfc7202032dc8b50204165c512a0204579a19510420777869645f316f706a307a763361626561313238365f313436393731363831350201000201000400\" length=\"151756\" playlength=\"2\" cdnthumblength=\"3732\" cdnthumbwidth=\"320\" cdnthumbheight=\"240\" fromusername=\"wxid_rm9bhoraxutg11\" md5=\"162c8fca9cef905b76ca751529712c11\" /&gt;<br/>\t&lt;streamvideo&gt;<br/>\t\t&lt;streamvideourl&gt;&lt;/streamvideourl&gt;<br/>\t\t&lt;streamvideototaltime&gt;0&lt;/streamvideototaltime&gt;<br/>\t\t&lt;streamvideotitle&gt;&lt;/streamvideotitle&gt;<br/>\t\t&lt;streamvideowording&gt;&lt;/streamvideowording&gt;<br/>\t\t&lt;streamvideoweburl&gt;&lt;/streamvideoweburl&gt;<br/>\t\t&lt;streamvideothumburl&gt;&lt;/streamvideothumburl&gt;<br/>\t\t&lt;streamvideopublishid&gt;&lt;/streamvideopublishid&gt;<br/>\t\t&lt;streamvideoaduxinfo&gt;&lt;/streamvideoaduxinfo&gt;<br/>\t&lt;/streamvideo&gt;<br/>\t&lt;statextstr&gt;&lt;/statextstr&gt;<br/>&lt;/msg&gt;<br/>",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 5912194707615004000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 62,    ！！
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "5912194707615003802",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469716817,
+      "SubMsgType": 0
+    }
+  ],
+
+
+优酷分享
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "&lt;msg&gt;&lt;appmsg appid=\"wxa77232e51741dee3\" sdkver=\"0\"&gt;&lt;title&gt;监拍公交司机被乘客掌掴辱骂 默默忍受坚持驾驶!&lt;/title&gt;&lt;des&gt;监拍公交司机被乘客掌掴辱骂 默默忍受坚持驾驶!。更多精彩，尽在优酷视频。&lt;/des&gt;&lt;action&gt;&lt;/action&gt;&lt;type&gt;4&lt;/type&gt;&lt;showtype&gt;0&lt;/showtype&gt;&lt;mediatagname&gt;&lt;/mediatagname&gt;&lt;messageext&gt;&lt;/messageext&gt;&lt;messageaction&gt;&lt;/messageaction&gt;&lt;content&gt;&lt;/content&gt;&lt;contentattr&gt;0&lt;/contentattr&gt;&lt;url&gt;http://v.youku.com/v_show/id_XMTY2MTA3MTE5Mg==.html?sharefrom=iphone&lt;/url&gt;&lt;lowurl&gt;&lt;/lowurl&gt;&lt;dataurl&gt;&lt;/dataurl&gt;&lt;lowdataurl&gt;&lt;/lowdataurl&gt;&lt;appattach&gt;&lt;totallen&gt;0&lt;/totallen&gt;&lt;attachid&gt;&lt;/attachid&gt;&lt;emoticonmd5&gt;&lt;/emoticonmd5&gt;&lt;fileext&gt;&lt;/fileext&gt;&lt;cdnthumburl&gt;304d0201000446304402010002045850ff0d02033d0af50204734c977b0204579a1a3e0422323335333135323934394063686174726f6f6d333034305f313436393730323030320201000201000400&lt;/cdnthumburl&gt;&lt;cdnthumbmd5&gt;&lt;/cdnthumbmd5&gt;&lt;cdnthumblength&gt;5054&lt;/cdnthumblength&gt;&lt;cdnthumbwidth&gt;100&lt;/cdnthumbwidth&gt;&lt;cdnthumbheight&gt;100&lt;/cdnthumbheight&gt;&lt;cdnthumbaeskey&gt;b47e2947da8447959b8cad3615350963&lt;/cdnthumbaeskey&gt;&lt;aeskey&gt;b47e2947da8447959b8cad3615350963&lt;/aeskey&gt;&lt;encryver&gt;0&lt;/encryver&gt;&lt;/appattach&gt;&lt;extinfo&gt;&lt;/extinfo&gt;&lt;sourceusername&gt;&lt;/sourceusername&gt;&lt;sourcedisplayname&gt;&lt;/sourcedisplayname&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;thumburl&gt;&lt;/thumburl&gt;&lt;statextstr&gt;&lt;/statextstr&gt;&lt;md5&gt;&lt;/md5&gt;&lt;/appmsg&gt;&lt;fromusername&gt;wxid_rm9bhoraxutg11&lt;/fromusername&gt;&lt;scene&gt;0&lt;/scene&gt;&lt;appinfo&gt;&lt;version&gt;105&lt;/version&gt;&lt;appname&gt;优酷视频&lt;/appname&gt;&lt;/appinfo&gt;&lt;commenturl&gt;&lt;/commenturl&gt;&lt;/msg&gt;",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 2000289223026368800,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 4,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": "wxa77232e51741dee3"   ！！！！！
+      },
+      "Url": "http://v.youku.com/v_show/id_XMTY2MTA3MTE5Mg==.html?sharefrom=iphone",    ！！！！
+      "ImgStatus": 2,   !!!!!!!!!!!!!!!!!!
+      "MsgType": 49,    ！！！
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "2000289223026368717",
+      "FileName": "监拍公交司机被乘客掌掴辱骂 默默忍受坚持驾驶!",
+      "HasProductId": 0,
+      "FileSize": "0",
+      "CreateTime": 1469717054,
+      "SubMsgType": 0
+    },
+  ],
+
+
+群消息
+  "AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@@87525e9e413fb0e0bba97b46f3a3793cb63c1bb3f8e293c140926b1935ccdc93", ！！！！！！！！ @@@
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "\"void\"邀请你和Alisa-张婷婷加入了群聊",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 1036795950685903900,
+      "Status": 4,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 10000,     !!!!!!邀请入群
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "1036795950685903833",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469717514,
+      "SubMsgType": 0
+    },
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@@87525e9e413fb0e0bba97b46f3a3793cb63c1bb3f8e293c140926b1935ccdc93",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81:<br/>测试",   ！！！！ @说话人
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 3227475836065239000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 1,
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "3227475836065238954",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469717514,
+      "SubMsgType": 0
+    }
+  ],
+
+群消息加@
+"AddMsgList": [
+    {
+      "ImgWidth": 0,
+      "FromUserName": "@@87525e9e413fb0e0bba97b46f3a3793cb63c1bb3f8e293c140926b1935ccdc93",
+      "PlayLength": 0,
+      "RecommendInfo": {
+        "UserName": "",
+        "Province": "",
+        "City": "",
+        "Scene": 0,
+        "QQNum": 0,
+        "Content": "",
+        "Alias": "",
+        "OpCode": 0,
+        "Signature": "",
+        "Ticket": "",
+        "Sex": 0,
+        "NickName": "",
+        "AttrStatus": 0,
+        "VerifyFlag": 0
+      },
+      "Content": "@65ac595a45cc604d8b56a400fe1024b716b7e01a07b75464a1b3583c826e0b81:<br/>@null @Alisa-张婷婷 测一测",
+      "StatusNotifyUserName": "",
+      "StatusNotifyCode": 0,
+      "NewMsgId": 5617881801557375000,
+      "Status": 3,
+      "VoiceLength": 0,
+      "ToUserName": "@0cdec31c86a2d125468ef2cbb8a5dbdcc99cec43b3c0a6d75e73cfdcde469c47",
+      "ForwardFlag": 0,
+      "AppMsgType": 0,
+      "Ticket": "",
+      "AppInfo": {
+        "Type": 0,
+        "AppID": ""
+      },
+      "Url": "",
+      "ImgStatus": 1,
+      "MsgType": 1,
+      "ImgHeight": 0,
+      "MediaId": "",
+      "MsgId": "5617881801557375011",
+      "FileName": "",
+      "HasProductId": 0,
+      "FileSize": "",
+      "CreateTime": 1469718621,
+      "SubMsgType": 0
+    }
+  ],

@@ -485,7 +485,7 @@ class WXBot:
                 print '    | desc: %s' % self.search_content('des', content, 'xml')
                 print '    | link: %s' % msg['Url']
                 print '    | from: %s' % self.search_content('appname', content, 'xml')
-                print '    | content: %s' % msg.get('content')[:20]
+                print '    | content: %s' % msg.get('Content')[:20]
                 print '    --------------------------'
 
         elif mtype == 62:
@@ -503,7 +503,7 @@ class WXBot:
             msg_content['data'] = content
             if self.DEBUG:
                 print '    %s[Redraw]' % msg_prefix
-        elif mtype == 10000:  # unknown, maybe red packet, or group invite
+        elif mtype == 10000:  # unknown, maybe red packet, or group invite  群邀请！
             msg_content['type'] = 12
             msg_content['data'] = msg['Content']
             if self.DEBUG:
@@ -529,6 +529,7 @@ class WXBot:
             99 -> Unknown
         :param r: 原始微信消息
         """
+        print "raw data:"
         print r
         for msg in r['AddMsgList']:
             user = {'id': msg['FromUserName'], 'name': 'unknown'}
@@ -562,6 +563,9 @@ class WXBot:
 
             if self.DEBUG and msg_type_id != 0:
                 print '[MSG] %s:' % user['name']
+            print "user and msg_type_id"
+            print(user)
+            print(msg_type_id)
             content = self.extract_msg_content(msg_type_id, msg)
             message = {'msg_type_id': msg_type_id,
                        'msg_id': msg['MsgId'],
