@@ -5,12 +5,12 @@ import subprocess
 import multiprocessing
 import time
 import re
-import os
 import pickle
+import daemonize
+import os
 from urlparse import urlparse
 from wxBot.wxbot import *
 
-import sys
 
 class DownloadTask:
 
@@ -94,9 +94,6 @@ class MyWXBot(WXBot):
     # 执行完后台任务时的回调方法
     def _callback(self, task):
         print("in callback.")
-        # print "sleep 3s"
-        # time.sleep(3)
-        # print "finished"
         if task.returncode == 1099:
             self.send_msg_by_uid(task.ret, task.user_id)
         elif task.returncode:
@@ -138,9 +135,6 @@ class MyWXBot(WXBot):
             "pass_ticket" : self.pass_ticket,
             "device_id" : self.device_id,
             "base_request" : self.base_request,
-            # "sync_key" : self.sync_key,
-            # "sync_key_str" : self.sync_key_str,
-            # "my_account" : self.my_account,
             "session" : self.session,
         }
         with open('dump.pickle', 'wb') as f:
@@ -161,9 +155,6 @@ class MyWXBot(WXBot):
                 self.uin = d["uin"]
                 self.pass_ticket = d["pass_ticket"]
                 self.base_request = d["base_request"]
-                # self.sync_key = d["sync_key"]
-                # self.sync_key_str = d["sync_key_str"]
-                # self.my_account = d["my_account"]
                 self.session = d["session"]
                 self.device_id = d["device_id"]
                 print d
@@ -203,94 +194,22 @@ class MyWXBot(WXBot):
                 return
 
 
-            
             self.dump_keys()
             print "get all keys, restart needed"
             return
-
-            # self.dump_keys()
         else:
             print "loaded old keys"
 
 
-        if self.init():
-            print '[INFO] Web WeChat init succeed .'
-        else:
-            print '[INFO] Web WeChat init failed'
-            return
-
-        self.status_notify()
-        self.get_contact()
-        print '[INFO] Get %d contacts' % len(self.contact_list)
-        print '[INFO] Start to process messages .'
-        self.proc_msg()
-
-
-
-        return
-
-
-
-
-        self.get_uuid()                                         #self.uuid!!!
-        self.gen_qr_code('qr.png')
-        print '[INFO] Please use WeChat to scan the QR code .'
-
-        result = self.wait4login()                             
-        # window.code=200;
-        # window.redirect_uri="https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=A05EyS-DbkUHaF4P82XqXXvq@qrticket_0&uuid=gb5YInhL9Q==&lang=zh_CN&scan=1469770846";
-        # 
-        #self.redirect_uri!!! = redirect_uri    https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxnewloginpage?ticket=A3tELgCrPZtsUJO_ZzzH5NG2@qrticket_0&uuid=4a5lWAvkXQ==&lang=zh_CN&scan=1469771097&fun=new
-        #self.base_uri!!! = redirect_uri[:redirect_uri.rfind('/')]  https://wx2.qq.com/cgi-bin/mmwebwx-bin
-
-        if result != SUCCESS:
-            print '[ERROR] Web WeChat login failed. failed code=%s' % (result,)
-            return
-
-        if self.login():
-            # <error>
-            #     <ret>0</ret>
-            #     <message>OK</message>
-            #     <skey>@crypt_507a5261_db89646874932fbc98a15339bee371be</skey>
-            #     <wxsid>lvjbN8rBXObQCGHH</wxsid>
-            #     <wxuin>337808340</wxuin>
-            #     <pass_ticket>QJpEPGYuoUsq6lJWnV9eoL1UtqGzyGALkGnfZWrVdqhM8TMTPVjB75fDlFpLYb8b</pass_ticket>
-            #     <isgrayscale>1</isgrayscale>
-            # </error>
-
-            # if node.nodeName == 'skey':
-            #     self.skey!! = node.childNodes[0].data
-            # elif node.nodeName == 'wxsid':
-            #     self.sid !!= node.childNodes[0].data
-            # elif node.nodeName == 'wxuin':
-            #     self.uin!! = node.childNodes[0].data
-            # elif node.nodeName == 'pass_ticket':
-            #     self.pass_ticket!! = node.childNodes[0].data
-
-            # self.base_request = {
-            #     'Uin': self.uin,
-            #     'Sid': self.sid,
-            #     'Skey': self.skey,
-            #     'DeviceID': self.device_id,
-            # }
-            print "skey: " + self.skey
-            print "sid: " + self.sid
-            print "uin: " + self.uin
-            print "pass_ticket: " + self.pass_ticket
-            print '[INFO] Web WeChat login succeed .'
-        else:
-            print '[ERROR] Web WeChat login failed .'
-            return
-
-
-
-
+        ret = daemonize.createDaemon()
+        print "start daemon..."
 
         if self.init():
             print '[INFO] Web WeChat init succeed .'
         else:
             print '[INFO] Web WeChat init failed'
             return
+
         self.status_notify()
         self.get_contact()
         print '[INFO] Get %d contacts' % len(self.contact_list)
@@ -299,6 +218,10 @@ class MyWXBot(WXBot):
 
 
 def main():
+    daemonize.WORKING_DIR = os.path.dirname(os.path.realpath(__file__))
+    daemonize.STDOUT = "stdout.log"
+    daemonize.STDERR = "stderr.log"
+
     bot = MyWXBot()
     bot.DEBUG = True
     bot.conf['qr'] = 'tty'
@@ -307,12 +230,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    
-    sys.setdefaultencoding("utf-8")
-    # print u"你好吗".encode("utf-8")
-    import locale
-    locales = "Current locale: %s %s -- Default locale: %s %s" % (locale.getlocale() + locale.getdefaultlocale())
-    print locales
-    print (u"你好吗")
-    time.sleep(5)
+    main()
