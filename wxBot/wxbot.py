@@ -54,7 +54,7 @@ class SafeSession(requests.Session):
                 continue
 
 
-class WXBot:
+class WXBot(object):
     """WXBot功能类"""
 
     def __init__(self):
@@ -114,6 +114,8 @@ class WXBot:
                               % (self.pass_ticket, self.skey, int(time.time()))
         r = self.session.post(url, data='{}')
         r.encoding = 'utf-8'
+        print "contact list:"
+        print r.text
         if self.DEBUG:
             with open('contacts.json', 'w') as f:
                 f.write(r.text.encode('utf-8'))
@@ -399,6 +401,7 @@ class WXBot:
         msg_prefix = (msg_content['user']['name'] + ':') if 'user' in msg_content else ''
 
         if mtype == 1:
+            # !!!!!!!!!!!!!这里的判断是有问题的！！！！！！！！！！！！详情看微信返回数据文本里
             if content.find('http://weixin.qq.com/cgi-bin/redirectforward?args=') != -1:
                 r = self.session.get(content)
                 r.encoding = 'gbk'
@@ -529,8 +532,6 @@ class WXBot:
             99 -> Unknown
         :param r: 原始微信消息
         """
-        print "raw data:"
-        print r
         for msg in r['AddMsgList']:
             user = {'id': msg['FromUserName'], 'name': 'unknown'}
             if msg['MsgType'] == 51:  # init message
@@ -587,7 +588,7 @@ class WXBot:
             check_time = time.time()
             try:
                 [retcode, selector] = self.sync_check()
-                # print '[DEBUG] sync_check:', retcode, selector
+                print '[DEBUG] sync_check:', retcode, selector
                 if retcode == '1100':  # 从微信客户端上登出
                     break
                 elif retcode == '1101':  # 从其它设备上登了网页微信
@@ -738,11 +739,13 @@ class WXBot:
 
     def get_uuid(self):
         url = 'https://login.weixin.qq.com/jslogin'
+        ts = int(time.time()) * 1000 + random.randint(1, 999)
+        print("uuid timestamp: " + str(ts))
         params = {
             'appid': 'wx782c26e4c19acffb',
             'fun': 'new',
             'lang': 'zh_CN',
-            '_': int(time.time()) * 1000 + random.randint(1, 999),
+            '_': ts,
         }
         r = self.session.get(url, params=params)
         r.encoding = 'utf-8'
@@ -752,11 +755,13 @@ class WXBot:
         if pm:
             code = pm.group(1)
             self.uuid = pm.group(2)
+            print "uuid is " + self.uuid
             return code == '200'
         return False
 
     def gen_qr_code(self, qr_file_path):
         string = 'https://login.weixin.qq.com/l/' + self.uuid
+        
         qr = pyqrcode.create(string)
         if self.conf['qr'] == 'png':
             qr.png(qr_file_path, scale=8)
@@ -794,6 +799,8 @@ class WXBot:
         retry_time = MAX_RETRY_TIMES
         while retry_time > 0:
             url = LOGIN_TEMPLATE % (tip, self.uuid, int(time.time()))
+            # print u"判断是否登录的链接:"
+            print url
             code, data = self.do_request(url)
             if code == SCANED:
                 print '[INFO] Please confirm to login .'
@@ -803,6 +810,8 @@ class WXBot:
                 redirect_uri = param.group(1) + '&fun=new'
                 self.redirect_uri = redirect_uri
                 self.base_uri = redirect_uri[:redirect_uri.rfind('/')]
+                print self.redirect_uri
+                print self.base_uri
                 return code
             elif code == TIMEOUT:
                 print '[ERROR] WeChat login timeout. retry in %s secs later...' % (try_later_secs,)
@@ -858,10 +867,15 @@ class WXBot:
         r = self.session.post(url, data=json.dumps(params))
         r.encoding = 'utf-8'
         dic = json.loads(r.text)
+        print "init dict"
+        print dic
         self.sync_key = dic['SyncKey']
         self.my_account = dic['User']
         self.sync_key_str = '|'.join([str(keyVal['Key']) + '_' + str(keyVal['Val'])
                                       for keyVal in self.sync_key['List']])
+        print "sync_key is " + str(self.sync_key)
+        print "my_account is " + str(self.my_account)
+        print "sync_key_str is " + self.sync_key_str
         return dic['BaseResponse']['Ret'] == 0
 
     def status_notify(self):
@@ -877,6 +891,8 @@ class WXBot:
         r = self.session.post(url, data=json.dumps(params))
         r.encoding = 'utf-8'
         dic = json.loads(r.text)
+        print "status nofity res:"
+        print dic
         return dic['BaseResponse']['Ret'] == 0
 
     def test_sync_check(self):
@@ -888,6 +904,7 @@ class WXBot:
         return False
 
     def sync_check(self):
+        print "[DEBUG] start sync check"
         params = {
             'r': int(time.time()),
             'sid': self.sid,
@@ -905,11 +922,14 @@ class WXBot:
             pm = re.search(r'window.synccheck=\{retcode:"(\d+)",selector:"(\d+)"\}', data)
             retcode = pm.group(1)
             selector = pm.group(2)
+            print "[DEBUG] finish sync check"
             return [retcode, selector]
         except:
+            print "[DEBUG] finish sync check"
             return [-1, -1]
 
     def sync(self):
+        print "in super sync"
         url = self.base_uri + '/webwxsync?sid=%s&skey=%s&lang=en_US&pass_ticket=%s' \
                               % (self.sid, self.skey, self.pass_ticket)
         params = {
@@ -925,6 +945,10 @@ class WXBot:
                 self.sync_key = dic['SyncKey']
                 self.sync_key_str = '|'.join([str(keyVal['Key']) + '_' + str(keyVal['Val'])
                                               for keyVal in self.sync_key['List']])
+            print "sync res:"
+            print dic
+            print "sync_key is " + str(self.sync_key)
+            print "sync_key_str is " + self.sync_key_str
             return dic
         except:
             return None
