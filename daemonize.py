@@ -5,7 +5,6 @@ import os
 import time
 
 
-WORKING_DIR = "/"
 STDOUT = ""
 STDERR = ""
 UMASK = 0022
@@ -18,7 +17,6 @@ else:
    REDIRECT_TO = "/dev/null"
 
 def createDaemon():
-    global WORKING_DIR
     global STDOUT
     global STDERR
     global UMASK
@@ -42,7 +40,6 @@ def createDaemon():
     if pid > 0:
         os._exit(0) # 第一子进程退出
 
-    os.chdir(WORKING_DIR)
     os.umask(UMASK)
 
     # close file descriptors

@@ -114,8 +114,8 @@ class WXBot(object):
                               % (self.pass_ticket, self.skey, int(time.time()))
         r = self.session.post(url, data='{}')
         r.encoding = 'utf-8'
-        print "contact list:"
-        print r.text
+        # print "contact list:"
+        # print r.text
         if self.DEBUG:
             with open('contacts.json', 'w') as f:
                 f.write(r.text.encode('utf-8'))
@@ -564,9 +564,9 @@ class WXBot(object):
 
             if self.DEBUG and msg_type_id != 0:
                 print '[MSG] %s:' % user['name']
-            print "user and msg_type_id"
-            print(user)
-            print(msg_type_id)
+                print "user and msg_type_id"
+                print(user)
+                print(msg_type_id)
             content = self.extract_msg_content(msg_type_id, msg)
             message = {'msg_type_id': msg_type_id,
                        'msg_id': msg['MsgId'],
@@ -588,7 +588,8 @@ class WXBot(object):
             check_time = time.time()
             try:
                 [retcode, selector] = self.sync_check()
-                print '[DEBUG] sync_check:', retcode, selector
+                if self.DEBUG:
+                    print '[DEBUG] sync_check:', retcode, selector
                 if retcode == '1100':  # 从微信客户端上登出
                     break
                 elif retcode == '1101':  # 从其它设备上登了网页微信
@@ -867,15 +868,17 @@ class WXBot(object):
         r = self.session.post(url, data=json.dumps(params))
         r.encoding = 'utf-8'
         dic = json.loads(r.text)
-        print "init dict"
-        print dic
+        if self.DEBUG:
+            print "init dict"
+            print dic
         self.sync_key = dic['SyncKey']
         self.my_account = dic['User']
         self.sync_key_str = '|'.join([str(keyVal['Key']) + '_' + str(keyVal['Val'])
                                       for keyVal in self.sync_key['List']])
-        print "sync_key is " + str(self.sync_key)
-        print "my_account is " + str(self.my_account)
-        print "sync_key_str is " + self.sync_key_str
+        if self.DEBUG:
+            print "sync_key is " + str(self.sync_key)
+            print "my_account is " + str(self.my_account)
+            print "sync_key_str is " + self.sync_key_str
         return dic['BaseResponse']['Ret'] == 0
 
     def status_notify(self):
@@ -891,8 +894,9 @@ class WXBot(object):
         r = self.session.post(url, data=json.dumps(params))
         r.encoding = 'utf-8'
         dic = json.loads(r.text)
-        print "status nofity res:"
-        print dic
+        if self.DEBUG:
+            print "status nofity res:"
+            print dic
         return dic['BaseResponse']['Ret'] == 0
 
     def test_sync_check(self):
@@ -904,7 +908,8 @@ class WXBot(object):
         return False
 
     def sync_check(self):
-        print "[DEBUG] start sync check"
+        if self.DEBUG:
+            print "[DEBUG] start sync check"
         params = {
             'r': int(time.time()),
             'sid': self.sid,
@@ -922,14 +927,16 @@ class WXBot(object):
             pm = re.search(r'window.synccheck=\{retcode:"(\d+)",selector:"(\d+)"\}', data)
             retcode = pm.group(1)
             selector = pm.group(2)
-            print "[DEBUG] finish sync check"
+            if self.DEBUG:
+                print "[DEBUG] finish sync check"
             return [retcode, selector]
         except:
-            print "[DEBUG] finish sync check"
+            if self.DEBUG:
+                print "[DEBUG] finish sync check"
             return [-1, -1]
 
     def sync(self):
-        print "in super sync"
+        # print "in super sync"
         url = self.base_uri + '/webwxsync?sid=%s&skey=%s&lang=en_US&pass_ticket=%s' \
                               % (self.sid, self.skey, self.pass_ticket)
         params = {
@@ -945,10 +952,11 @@ class WXBot(object):
                 self.sync_key = dic['SyncKey']
                 self.sync_key_str = '|'.join([str(keyVal['Key']) + '_' + str(keyVal['Val'])
                                               for keyVal in self.sync_key['List']])
-            print "sync res:"
-            print dic
-            print "sync_key is " + str(self.sync_key)
-            print "sync_key_str is " + self.sync_key_str
+            if self.DEBUG:
+                print "sync res:"
+                print dic
+                print "sync_key is " + str(self.sync_key)
+                print "sync_key_str is " + self.sync_key_str
             return dic
         except:
             return None

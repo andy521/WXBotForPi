@@ -11,12 +11,13 @@ import os
 from urlparse import urlparse
 from wxBot.wxbot import *
 
+DIR_PATH = "/www/wxbot" # 媒体文件保存地址
 
 class DownloadTask:
 
     WEBLIST = {'https://www.youtube.com', 'https://twitter.com', 'http://vk.com', 'https://vine.co', 'https://vimeo.com', 'http://vidto.me', 'http://videomega.tv', 'http://www.veoh.com', 'https://www.tumblr.com', 'http://www.ted.com', 'https://soundcloud.com', 'https://www.pinterest.com', 'http://en.musicplayon.com', 'http://www.mtv81.com', 'https://www.mixcloud.com', 'http://www.metacafe.com', 'http://www.magisto.com', 'https://www.khanacademy.org', 'http://www.jpopsuki.tv', 'https://archive.org', 'https://instagram.com', 'http://www.infoq.com/presentations', 'http://imgur.com', 'http://www.heavy-music.ru', 'https://plus.google.com', 'http://www.freesound.org', 'https://www.flickr.com', 'http://video.fc2.com', 'https://www.facebook.com', 'http://www.ehow.com', 'http://www.dailymotion.com', 'http://www.cbs.com', 'http://bandcamp.com', 'http://alive.in.th', 'http://7gogo.jp', 'http://www.nicovideo.jp', 'http://v.163.com', 'http://music.163.com', 'http://www.56.com', 'http://www.acfun.tv', 'http://tieba.baidu.com', 'http://www.baomihua.com', 'http://www.bilibili.com', 'http://www.dilidili.com', 'http://www.douban.com', 'http://www.douyutv.com', 'http://www.panda.tv', 'http://v.ifeng.com', 'http://www.fun.tv', 'http://www.iqiyi.com', 'http://www.joy.cn', 'http://www.ku6.com', 'http://www.kugou.com', 'http://www.kuwo.cn', 'http://www.le.com', 'http://www.lizhi.fm', 'http://www.miaopai.com', 'http://www.miomio.tv', 'https://www.pixnet.net', 'http://www.pptv.com', 'http://v.iqilu.com', 'http://v.qq.com', 'http://live.qq.com', 'http://qianmo.com', 'http://thvideo.tv', 'http://video.sina.com.cn', 'http://video.weibo.com', 'http://tv.sohu.com', 'http://www.dongting.com', 'http://www.tudou.com', 'http://www.xiami.com', 'http://www.isuntv.com', 'http://www.yinyuetai.com', 'http://www.youku.com', 'http://v.youku.com', 'http://www.cntv.cn', 'http://huaban.com', 'http://tvcast.naver.com', 'http://www.mgtv.com'}
 
-    def __init__(self, user_id, url, format_option = "", callback = None):
+    def __init__(self, user_id, url, format_option = None, callback = None, dir_path = None):
         # pass
         self.user_id = user_id
         self.url = url
@@ -25,6 +26,7 @@ class DownloadTask:
         self.callback = callback
         self.returncode = 0
         self.ret = ""
+        self.dir_path = dir_path
 
     def _runInBackground(self):
         print("runInBackground")
@@ -50,12 +52,21 @@ class DownloadTask:
                     self.callback(self)
                     return
 
-                command = ["you-get", match.group(1), self.url]
+                command = ["you-get", match.group(1)]
             else:
-                command = ["you-get", self.url]
+                command = ["you-get"]
+
+            if self.dir_path:
+                command.extend(["-o", self.dir_path])
+
+            command.append(self.url)
             
         else:
             command = ["wget", self.url]
+
+            if self.dir_path:
+                command.extend(["-P", self.dir_path])
+
         # 3. 开始下载
         try:
             ret = subprocess.check_output(command, stderr=subprocess.STDOUT)
@@ -103,20 +114,32 @@ class MyWXBot(WXBot):
 
     # 消息处理方法
     def handle_msg_all(self, msg):
-        print(msg)
+        if self.DEBUG:
+            print(msg)
         # 收到文字信息
-        if msg['msg_type_id'] == 4 and msg['content']['type'] == 0:
-            # print("check command type")
-            command = self._check_command(msg["content"]["data"])
-            if command["type"] == 1:
-                # print("this is a download command")
+        if msg['msg_type_id'] == 4:
+            if msg['content']['type'] == 0: #文本
+                # print("check command type")
+                command = self._check_command(msg["content"]["data"])
+                if command["type"] == 1:
+                    if self.DEBUG:
+                        print("this is a download command")
+                    self.send_msg_by_uid(u'发现下载任务', msg['user']['id'])
+                    # 添加下载任务
+                    task = DownloadTask(msg['user']['id'], command["url"], command["format_option"], self._callback, self.conf["dir_path"])
+                    task.start()
+                else:
+                    self.send_msg_by_uid(u'不知道你在说什么，呵呵哒', msg['user']['id'])
+                # print("after check.long sleep")
+            elif msg['content']['type'] == 7:   #分享
+                url = msg['content']['data']['url']
+                if self.DEBUG:
+                    print "this is a shared content"
+                # type (类型)，title (标题)，desc (描述)，url (链接)，from (源网站)字段
                 self.send_msg_by_uid(u'发现下载任务', msg['user']['id'])
-                # 添加下载任务
-                task = DownloadTask(msg['user']['id'], command["url"], command["format_option"], self._callback)
+                task = DownloadTask(msg['user']['id'], url, None, self._callback, self.conf["dir_path"])
                 task.start()
-            else:
-                self.send_msg_by_uid(u'不知道你在说什么，呵呵哒', msg['user']['id'])
-            # print("after check.long sleep")
+
 
     # def schedule(self):
     #     # self.send_msg(u'void', u'测试')
@@ -163,10 +186,10 @@ class MyWXBot(WXBot):
 
     # 更新self.sync_key和self.sync_key_str后写入文件
     def sync(self):
-        print "[DEBUG]start syncing"
+        # print "[DEBUG]start syncing"
         dic = super(MyWXBot, self).sync()
         # self.dump_keys()    #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        print "[DEBUG]finished syncing"
+        # print "[DEBUG]finished syncing"
         return dic
 
     def myRun(self):
@@ -195,14 +218,13 @@ class MyWXBot(WXBot):
 
 
             self.dump_keys()
-            print "get all keys, restart needed"
-            return
         else:
             print "loaded old keys"
 
 
-        ret = daemonize.createDaemon()
-        print "start daemon..."
+        if not self.DEBUG:
+            ret = daemonize.createDaemon()
+            print "start daemon..."
 
         if self.init():
             print '[INFO] Web WeChat init succeed .'
@@ -218,13 +240,16 @@ class MyWXBot(WXBot):
 
 
 def main():
-    daemonize.WORKING_DIR = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
     daemonize.STDOUT = "stdout.log"
     daemonize.STDERR = "stderr.log"
 
     bot = MyWXBot()
-    bot.DEBUG = True
+    # bot.DEBUG = True
     bot.conf['qr'] = 'tty'
+    bot.conf['dir_path'] = DIR_PATH
+
     # bot.run()
     bot.myRun()
 
