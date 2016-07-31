@@ -109,6 +109,7 @@ class MyWXBot(WXBot):
             self.send_msg_by_uid(task.ret, task.user_id)
         elif task.returncode:
             self.send_msg_by_uid(task.url + u"下载失败", task.user_id)
+            self.send_msg_by_uid(task.ret, task.user_id)
         else:
             self.send_msg_by_uid(task.url + u"下载成功啦亲！！！！！！！", task.user_id)
 
