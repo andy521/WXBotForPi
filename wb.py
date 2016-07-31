@@ -110,6 +110,8 @@ class MyWXBot(WXBot):
         elif task.returncode:
             self.send_msg_by_uid(task.url + u"下载失败", task.user_id)
             self.send_msg_by_uid(task.ret, task.user_id)
+            print "[ERROR] 下载错误"
+            print task.ret
         else:
             self.send_msg_by_uid(task.url + u"下载成功啦亲！！！！！！！", task.user_id)
 
